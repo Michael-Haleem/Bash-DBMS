@@ -21,7 +21,7 @@ do
             source ../../listtables.sh
             ;;
         "Drop Table")
-            echo "Drop Table"
+            source ../../droptable.sh
             ;;
         "insert into Table")
             echo "insert into Table"
