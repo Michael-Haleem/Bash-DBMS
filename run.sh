@@ -25,7 +25,7 @@ do
             source ../dropdb.sh
             ;;
         "Connect DB")
-            echo "Connect DB"
+            source ../connectdb.sh
             ;;
         "Exist")
             break
