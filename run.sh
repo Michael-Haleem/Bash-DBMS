@@ -1,5 +1,7 @@
 #! /bin/bash
 
+clear
+
 if ! [ -d "dbs" ]; then
     mkdir dbs
 fi
@@ -14,7 +16,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Create DB")
-            echo "Create DB"
+            source ../createdb.sh
             ;;
         "List DBs")
             echo "List DBs"
