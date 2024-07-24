@@ -22,7 +22,7 @@ do
             source ../listdbs.sh
             ;;
         "Drop DB")
-            echo "Drop DB"
+            source ../dropdb.sh
             ;;
         "Connect DB")
             echo "Connect DB"

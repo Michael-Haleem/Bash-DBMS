@@ -1,5 +1,7 @@
 #! /bin/bash
 
+source ../utilities_functions.sh
+
 clear
 
 while true 
@@ -8,7 +10,6 @@ do
 
     read dbname
 
-    source ../utilities_functions.sh
 
     if validate_name "$dbname"; then
 
