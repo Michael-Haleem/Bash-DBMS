@@ -15,9 +15,10 @@ do
     case $opt in
         "Create Table")
             source ../../createtable.sh
+            PS3="Please select an option: "
             ;;
         "List Tables")
-            echo "List Tables"
+            source ../../listtables.sh
             ;;
         "Drop Table")
             echo "Drop Table"

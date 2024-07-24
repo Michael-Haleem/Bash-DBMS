@@ -36,7 +36,7 @@ do
 
                         if validate_name "$pkname"; then
 
-                            PS3="Please select the data type of $pkname field: "
+                            local PS3="Please select the data type of $pkname field: "
                             pktype=""
                             select option in "String" "Integer" "Boolean"; do
                                 case $option in
@@ -82,6 +82,8 @@ do
                 fi
             done
             touch "$tablename"
+            clear
+            print_tablemainmenu
             break
         else
             echo "The name is already taken"

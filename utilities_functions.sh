@@ -24,7 +24,7 @@ cleanup_mate_files() {
         base_file="${meta_file%.meta}"
 
         if [[ ! -e "$base_file" ]]; then
-            rm "$meta_file"
+            rm "$meta_file" 2>/dev/null
         fi
     done
 }
