@@ -29,3 +29,46 @@ cleanup_mate_files() {
     done
 }
 
+
+
+
+check_type() {
+    local type="$1"
+    local value="$2"
+
+    case "$type" in
+        "String")
+            if [[ "$value" =~ ^[a-zA-Z]+$ ]]; then
+                return 0  
+            else
+                return 1  
+            fi
+            ;;
+        "Integer")
+            if [[ "$value" =~ ^-?[0-9]+$ ]]; then
+                return 0  
+            else
+                return 1  
+            fi
+            ;;
+        "Boolean")
+            if [[ "$value" == "true" || "$value" == "false" ]]; then
+                return 0  
+            else
+                return 1
+            fi
+            ;;
+    esac
+}
+
+print_numbered_files() {
+  local files=("${@}")
+  local i=1
+  
+  for file in "${files[@]}"; do
+    echo "$i) $file"
+    ((i++))
+  done
+}
+
+  

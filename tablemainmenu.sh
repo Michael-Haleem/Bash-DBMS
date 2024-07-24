@@ -24,7 +24,8 @@ do
             source ../../droptable.sh
             ;;
         "insert into Table")
-            echo "insert into Table"
+            source ../../insertintotable.sh
+            PS3="Please select an option: "
             ;;
         "Select Table")
             echo "Select Table"

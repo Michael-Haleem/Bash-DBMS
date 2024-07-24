@@ -66,7 +66,7 @@ do
                             type=""
                             select option in "String" "Integer" "Boolean"; do
                                 case $option in
-                                    "String"|"Integer"|"Boolean")
+                                    "String"|"Integer")
                                         type=$option
                                         break
                                         ;;
