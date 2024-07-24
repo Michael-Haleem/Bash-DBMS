@@ -19,7 +19,7 @@ do
             source ../createdb.sh
             ;;
         "List DBs")
-            echo "List DBs"
+            source ../listdbs.sh
             ;;
         "Drop DB")
             echo "Drop DB"
