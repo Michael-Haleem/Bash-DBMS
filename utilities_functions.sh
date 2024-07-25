@@ -15,7 +15,7 @@ print_mainmenu(){
 }
 
 print_tablemainmenu(){
-    echo -e "1) Create Table\n2) List Tables\n3) Drop Table\n4) insert into Table\n5) Select Table\n6) Select From Table\n7) Delete From Table\n8) Return To MainMenu"
+    echo -e "1) Create Table\n2) List Tables\n3) Drop Table\n4) insert into Table\n5) Select From Table\n6) Delete From Table\n7) Return To MainMenu"
 }
 
 cleanup_mate_files() {

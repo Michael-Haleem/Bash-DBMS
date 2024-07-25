@@ -55,7 +55,7 @@ select file in "${files[@]}"; do
         print_tablemainmenu
         break
   else
-    echo "Invalid selection. Please try again. $REPLY"
+    echo "Invalid selection. Please try again."
   fi
 
   print_numbered_files "${files[@]}"

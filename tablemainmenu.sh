@@ -8,7 +8,7 @@ cleanup_mate_files
 
 PS3="Please select an option: "
 
-options=("Create Table" "List Tables" "Drop Table" "insert into Table" "Select Table" "Select From Table" "Delete From Table" "Return To MainMenu")
+options=("Create Table" "List Tables" "Drop Table" "insert into Table" "Select From Table" "Delete From Table" "Return To MainMenu")
 
 select opt in "${options[@]}"
 do
@@ -27,11 +27,9 @@ do
             source ../../insertintotable.sh
             PS3="Please select an option: "
             ;;
-        "Select Table")
-            echo "Select Table"
-            ;;
         "Select From Table")
-            echo "Select From Table"
+            source ../../selectfromtable.sh
+            PS3="Please select an option: "
             ;;
         "Delete From Table")
             echo "Delete From Table"
