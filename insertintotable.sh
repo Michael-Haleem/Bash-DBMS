@@ -37,7 +37,7 @@ select file in "${files[@]}"; do
                     row+="$value"
                     break
                 elif [ $ispk -eq 1 ];then
-                    row+=":$value"
+                    row+="::$value"
                     break
                 else
                     echo "primary key cannot be duplicate; this value already exist"
@@ -48,7 +48,7 @@ select file in "${files[@]}"; do
         done
     done
     clear
-    echo -e "row:\n$row\ninserted successfully"
+    echo -e "row:\n$row\ninserted successfully\n"
     echo "$row" >> "$file"
   elif [ $REPLY -eq 0 ]; then
         clear

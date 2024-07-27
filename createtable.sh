@@ -36,11 +36,11 @@ do
 
                         if validate_name "$pkname"; then
 
-                            local PS3="Please select the data type of $pkname field: "
+                            PS3="Please select the data type of $pkname field: "
                             pktype=""
-                            select option in "String" "Integer" "Boolean"; do
+                            select option in "String" "Integer"; do
                                 case $option in
-                                    "String"|"Integer"|"Boolean")
+                                    "String"|"Integer")
                                         pktype=$option
                                         break
                                         ;;
@@ -66,7 +66,7 @@ do
                             type=""
                             select option in "String" "Integer" "Boolean"; do
                                 case $option in
-                                    "String"|"Integer")
+                                    "String"|"Integer"|"Boolean")
                                         type=$option
                                         break
                                         ;;
