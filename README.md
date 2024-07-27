@@ -8,17 +8,17 @@ This project is a simple database management system implemented using Bash. It a
 
 Getting Started
 ---------------
+## Cloning the Repository
 
-### Prerequisites
+clone this repository, use the following command:
 
-*   Unix-based operating system with Bash
-    
+`git clone https://github.com/Michael-Haleem/Bash-DBMS.git`
 
 ### Running the Project
 
 To run the project, navigate to the project directory and execute the following command:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopy code./run.sh   `
+`./run.sh `
 
 Features
 --------
