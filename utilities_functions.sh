@@ -11,7 +11,7 @@ validate_name(){
 }
 
 print_mainmenu(){
-    echo -e "1) Create DB\n2) List DBs\n3) Drop DB\n4) Connect DB\n5) Exist"
+    echo -e "1) Create DB\n2) List DBs\n3) Drop DB\n4) Connect DB\n5) Exit"
 }
 
 print_tablemainmenu(){

@@ -25,11 +25,13 @@ select file in "${files[@]}"; do
 
         while true
         do
-            read -p "enter the value for column $colname of type $coltype or type exit then enter to return to previous menu: " value
+            read -p "Enter the value for column $colname of type $coltype or type exit then enter to return to previous menu: " value
 
-            if [ "$value" = "exit" ]; then
-              clear
-              break
+            val_lower=$(echo "$value" | tr '[:upper:]' '[:lower:]')
+
+            if [ "$val_lower" = "exit" ]; then
+            clear
+            break 2
             fi
             if check_type $coltype $value ;then
 
@@ -51,7 +53,7 @@ select file in "${files[@]}"; do
             fi
         done
     done
-    if [ "$value" != "exit" ]; then
+    if [ "$val_lower" != "exit" ]; then
       clear
       echo -e "row:\n$row\ninserted successfully\n"
       echo "$row" >> "$file"

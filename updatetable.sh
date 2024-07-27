@@ -22,9 +22,11 @@ do
     do
         read -p "Enter the column $pk_col value for the row you want to update or type exit and press Enter to return to previous menu: " val
 
-        if [ "$val" = "exit" ]; then
-            clear
-            break
+        val_lower=$(echo "$val" | tr '[:upper:]' '[:lower:]')
+
+        if [ "$val_lower" = "exit" ]; then
+        clear
+        break
         fi
 
         col_type=$(get_col_type "$file" 1)
