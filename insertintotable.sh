@@ -25,8 +25,12 @@ select file in "${files[@]}"; do
 
         while true
         do
-            read -p "enter the value for column $colname of type $coltype: " value
-        
+            read -p "enter the value for column $colname of type $coltype or type exit then enter to return to previous menu: " value
+
+            if [ "$value" = "exit" ]; then
+              clear
+              break
+            fi
             if check_type $coltype $value ;then
 
                 awk -F: -v value="$value" '$1 == value {found=1; exit} END {if (found) exit 1; else exit 0}' "$file"
@@ -47,9 +51,11 @@ select file in "${files[@]}"; do
             fi
         done
     done
-    clear
-    echo -e "row:\n$row\ninserted successfully\n"
-    echo "$row" >> "$file"
+    if [ "$value" != "exit" ]; then
+      clear
+      echo -e "row:\n$row\ninserted successfully\n"
+      echo "$row" >> "$file"
+    fi
   elif [ $REPLY -eq 0 ]; then
         clear
         print_tablemainmenu

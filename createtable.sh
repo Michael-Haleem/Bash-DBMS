@@ -6,10 +6,15 @@ clear
 
 while true 
 do
-    echo -n "Enter the Table name: "
+    echo -n "Enter the Table name or press 0 then press Enter to return to previous menu: "
 
     read tablename
 
+    if [ "$tablename" = "0" ]; then
+        clear
+        print_tablemainmenu
+        break
+    fi
 
     if validate_name "$tablename"; then
 

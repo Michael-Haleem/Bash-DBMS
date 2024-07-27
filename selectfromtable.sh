@@ -35,6 +35,7 @@ do
       cat $file
       echo "---------------------------------------------"
       echo
+      PS3="Select a Table to select from or press 0 then press Enter to return to table main menu:"
     elif [ $opt_num -eq "2" ];then
       clear
       while true
@@ -44,6 +45,7 @@ do
         create_select_menu "$col_names"
         selected_col="$?"
         if [ $selected_col -eq "0" ]; then
+          # PS3="Select a Table to select from or press 0 then press Enter to return to table main menu:"  
           clear
           break
         fi
@@ -54,6 +56,7 @@ do
       echo "----------------------------"
       cols=""
       echo
+      PS3="Select a Table to select from or press 0 then press Enter to return to table main menu:"
     elif [ $opt_num -eq "3" ];then
       clear
       res=$(get_full_table $"$file")
@@ -64,6 +67,7 @@ do
         create_select_menu "$col_names"
         selected_col="$?"
         if [ $selected_col -eq "0" ]; then
+          PS3="Select a Table to select from or press 0 then press Enter to return to table main menu:"  
           clear
           break
         fi
@@ -86,7 +90,7 @@ do
         echo "---------- Result ----------"
         echo "$res"
         echo "----------------------------"
-        echo  
+        echo
       done
     fi
   elif [ "$REPLY" == "0" ]; then

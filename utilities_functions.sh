@@ -35,7 +35,7 @@ check_type() {
 
     case "$type" in
         "String")
-            if [[ "$value" =~ ^[a-zA-Z]+$ ]]; then
+            if [[ "$value" =~ ^[a-zA-Z]+$ ]] && [[ "$value" != "true" && "$value" != "false" ]]; then
                 return 0  
             else
                 return 1  
@@ -86,6 +86,13 @@ get_col_index(){
         }
     }
   '
+}
+
+get_col_name(){
+    local table_name=$1
+    local col_index=$2
+
+    awk -F: -v col_index="$(($col_index + 1))" 'NR == col_index {print $1}' "$table_name.meta"
 }
 
 get_col_type(){
@@ -184,13 +191,34 @@ create_select_menu(){
             return "0"
             break
         else
-            # exit
+
             echo "Invalid selection. Please try again."
         fi
     done 
     PS3=$prompt
 }
 
-# type=$(get_col_type "dbs/company/employees" "3")
-# echo "$type"
-# get_operations "$type"
+
+check_value_exists() {
+    if [ "$#" -ne 3 ]; then
+        echo "Usage: check_value_exists <filename> <column_index> <value>"
+        return 1
+    fi
+
+    local filename="$1"
+    local col_index="$2"
+    local value="$3"
+
+    awk -F "::" -v col="$col_index" -v val="$value" '
+        {
+            if ($col == val) {
+                found = 1
+                exit
+            }
+        }
+        END {
+            exit found ? 0 : 1
+        }
+    ' "$filename"
+}
+

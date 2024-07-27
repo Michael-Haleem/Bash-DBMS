@@ -36,7 +36,8 @@ do
             PS3="Please select an option: "
             ;;
         "Update Table")
-            echo "update"
+            source ../../updatetable.sh
+            PS3="Please select an option: "
             ;;
         "Return To MainMenu")
             cd ..

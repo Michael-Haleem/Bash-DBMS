@@ -17,7 +17,7 @@ do
         echo -e "\n$tablename was dropped successfully\n"
         print_tablemainmenu
         break
-    elif [ "$dbname" = "0" ]; then
+    elif [ "$tablename" =  "0" ]; then
         clear
         print_tablemainmenu
         break

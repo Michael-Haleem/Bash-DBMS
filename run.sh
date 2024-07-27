@@ -10,7 +10,7 @@ cd dbs
 
 PS3="Please select an option: "
 
-options=("Create DB" "List DBs" "Drop DB" "Connect DB" "Exist")
+options=("Create DB" "List DBs" "Drop DB" "Connect DB" "Exit")
 
 select opt in "${options[@]}"
 do
@@ -27,7 +27,7 @@ do
         "Connect DB")
             source ../connectdb.sh
             ;;
-        "Exist")
+        "Exit")
             break
             ;;
         *)
