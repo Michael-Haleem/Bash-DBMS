@@ -22,6 +22,6 @@ do
         print_tablemainmenu
         break
     else
-        echo -e "\n$tablename db was not found\n"
+        echo -e "\n$tablename table was not found\n"
     fi
 done
