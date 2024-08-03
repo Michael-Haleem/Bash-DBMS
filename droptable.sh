@@ -8,7 +8,7 @@ while true
 do
     echo -n "Enter Table name to drop or enter 0 and press enter to return the table main menu: "
 
-    read tablename
+    read -r tablename
 
     if [ -e "$tablename" ]; then
         rm "$tablename"

@@ -25,7 +25,7 @@ select file in "${files[@]}"; do
 
         while true
         do
-            read -p "Enter the value for column $colname of type $coltype or type exit then enter to return to previous menu: " value
+            read -rp "Enter the value for column $colname of type $coltype or type exit then enter to return to previous menu: " value
 
             val_lower=$(echo "$value" | tr '[:upper:]' '[:lower:]')
 

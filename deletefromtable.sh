@@ -29,7 +29,7 @@ do
                     ;;
                 2)
                     clear
-                    read -p "enter condition column name: " col_name
+                    read -rp "enter condition column name: " col_name
                     fnum=$(awk -F: -v col_name="$col_name" '$1 == col_name {print NR - 1}' "$file.meta")
                     
                     if [[ $fnum == "" ]]
@@ -38,7 +38,7 @@ do
                         echo -e "Column Not Found\n"
                         break
                     else
-                        read -p "Enter condition value: " val
+                        read -rp "Enter condition value: " val
                         res=$(awk -F: -v fnum="$fnum" -v val="$val" '{if ($fnum == val) print $fnum}' "$file" 2> /dev/null)
                         if [[ $res == "" ]]
                         then

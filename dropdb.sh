@@ -8,7 +8,7 @@ while true
 do
     echo -n "Enter Database name to drop or enter 0 and press enter to return the main menu: "
 
-    read dbname
+    read -r dbname
 
     if [ -d "$dbname" ]; then
         rm -rf "$dbname"

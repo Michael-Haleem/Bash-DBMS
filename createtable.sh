@@ -8,7 +8,7 @@ while true
 do
     echo -n "Enter the Table name or press 0 then press Enter to return to previous menu: "
 
-    read tablename
+    read -r tablename
 
     if [ "$tablename" = "0" ]; then
         clear
@@ -22,7 +22,7 @@ do
 
             while true
             do
-                read -p "Enter the number of fields: " num
+                read -rp "Enter the number of fields: " num
 
                 if [[ ! $num =~ ^[0-9]+$ ]]; then
                     echo "Invalid input. Please enter a positive integer."
@@ -37,7 +37,7 @@ do
 
                     while true
                     do                                
-                        read -p "Enter primary key field name: " pkname
+                        read -rp "Enter primary key field name: " pkname
 
                         if validate_name "$pkname"; then
 
@@ -63,7 +63,7 @@ do
                 else
                     while true
                     do                                
-                        read -p "Enter field $i name: " name
+                        read -rp "Enter field $i name: " name
 
                         if validate_name "$name"; then
 

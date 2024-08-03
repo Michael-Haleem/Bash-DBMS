@@ -8,7 +8,7 @@ while true
 do
     echo -n "Enter Database name you want to connect to or enter 0 and press enter to return the main menu: "
 
-    read dbname
+    read -r dbname
 
     if [ -d "$dbname" ]; then
         cd "$dbname"

@@ -78,7 +78,7 @@ do
         selected_opr="$?"
         while true
         do
-          read -p "Please enter the value to perform operations on: " val
+          read -rp "Please enter the value to perform operations on: " val
           if check_type "$col_type" "$val" ;then
             break
           else

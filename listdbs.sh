@@ -10,7 +10,7 @@ ls -F | grep / | sed 's./..g'
 
 echo -en "\nPress any key to return to main menu"
 
-read -n 1
+read -rn 1
 
 clear
 

@@ -20,7 +20,7 @@ do
     pk_col=$(get_col_name "$file" 1)
     while true
     do
-        read -p "Enter the column $pk_col value for the row you want to update or type exit and press Enter to return to previous menu: " val
+        read -rp "Enter the column $pk_col value for the row you want to update or type exit and press Enter to return to previous menu: " val
 
         val_lower=$(echo "$val" | tr '[:upper:]' '[:lower:]')
 
@@ -52,7 +52,7 @@ do
                     fi
                     selected_col=$(( $return_val + 1 ))
                     oldval=$(echo "$row" | awk -F'::' -v col="$selected_col" 'NR > 1 {print $col}')
-                    read -p "please enter the new value: " newval
+                    read -rp "please enter the new value: " newval
                     col_type=$(get_col_type "$file" "$selected_col")
 
                     if check_type "$col_type" "$newval"; then
